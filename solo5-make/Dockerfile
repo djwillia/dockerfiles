@@ -2,6 +2,7 @@
 
 FROM ocaml/opam:ubuntu
 
+USER opam
 VOLUME /src
 WORKDIR /src
 
