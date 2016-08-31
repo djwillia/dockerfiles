@@ -3,7 +3,7 @@
 FROM ocaml/opam:ubuntu
 
 USER opam
-VOLUME /src
-WORKDIR /src
+VOLUME /home/opam/src
+WORKDIR /home/opam/src
 
 ENTRYPOINT ["make"]

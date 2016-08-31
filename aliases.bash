@@ -23,7 +23,7 @@ alias netcat='docker run --rm netcat "`if [[ ! -t 0 ]]; then echo -e "$(cat)"; f
 # solo5-make [clean]
 #     runs make in the solo5 directory
 
-alias solo5-make='docker run --rm -v $PWD:/src -u `id -u` solo5-make'
+alias solo5-make='docker run --rm -v $PWD:/home/opam/src solo5-make'
 
 # mirage-make TARGET [clean]
 #     where TARGET is either 'virtio' or 'ukvm'
