@@ -34,43 +34,48 @@ netcat
 ### Building/testing Solo5 on its own
 
 1. Clone the Solo5 code and move into that directory
-
+```
     git clone https://github.com/solo5/solo5.git
     cd solo5
-   
+```
+
 2. Build the kernel (including its tests)
-
+```
     solo5-make
-
+```
 3. Run a test unikernel
-
+```
     cd tests/test_hello
     qemu test_hello.virtio -- hello
+```
 
 ### Building/testing a Solo5/Mirage unikernel
 
 1. Clone the Solo5 code and the Mirage skeleton tests
-
+```
     git clone https://github.com/solo5/solo5.git
     git clone -b mirage-dev https://github.com/mirage/mirage-skeleton
     cd mirage-skeleton/stackv4
-    
+```
+
 2. Build the unikernel.  Note that the containers but default will
    expect your Solo5 source directory in a specific place
    (`../../solo5`) and pin it during the Mirage/Solo5 build.  This
    should be fixed so that pinning is optional and the location can be
    specified.
-
+```
     mirage-make virtio
-
+```
 3. Run the unikernel.  Because we let `docker-unikernel-runner`, don't
    specify unikernel options for the network.  Disk support is not yet
    there.
-
+```
     qemu --net mir-stackv4.virtio
+```
 
 4. On Docker-for-Mac, we need another container to contact the
    unikernel over the network.  The `netcat` container helps with
    this:
-
+```
     echo "hello there" | netcat 172.17.0.2 8080
+```
