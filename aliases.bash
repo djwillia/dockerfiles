@@ -1,4 +1,19 @@
 
+alias-help() {
+cat<< EOF
+solo5-make [clean]
+    runs make in the current (solo5) directory
+mirage-make TARGET [clean]
+    where TARGET is either virtio or ukvm
+    runs mirage configure and make in the current (mirage app) directory
+    also pins the solo5 kernel in a horrible hardcoded way
+ukvm [--net] [--disk=foo] UNIKERNEL -- [unikernel args]
+qemu [--net] [--disk=foo] UNIKERNEL -- [unikernel args] 
+kvm  [--net] [--disk=foo] UNIKERNEL -- [unikernel args]
+    runs a unikernel on ukvm, qemu or kvm
+EOF
+}
+
 # solo5-make [clean]
 #     runs make in the solo5 directory
 
