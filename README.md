@@ -81,3 +81,37 @@ netcat
    ```
    echo "hello there" | netcat 172.17.0.2 8080
    ```
+
+### Building/testing a Solo5/Mirage unikernel on `uhvf`
+
+`uhvf` is an in-progress port of `ukvm` to MacOSX's
+Hypervisor.Framework, so these instructions will probably be out of
+date very soon.  See https://github.com/djwillia/solo5/tree/uhvf-ukvm.
+
+1. Clone the uhvf branch of the Solo5 code and the Mirage skeleton tests
+   ```
+   git clone -b uhvf-ukvm https://github.com/djwillia/solo5.git
+   git clone -b mirage-dev https://github.com/mirage/mirage-skeleton
+   cd mirage-skeleton/console
+   ```
+
+2. Build the unikernel.  Note that the containers but default will
+   expect your Solo5 source directory in a specific place
+   (`../../solo5`) and pin it during the Mirage/Solo5 build.  This
+   should be fixed so that pinning is optional and the location can be
+   specified.
+   ```
+   mirage-make ukvm
+   ```
+
+2. Build `uhvf`.  Note that this build is native (not from a container)
+   ```
+   cd ../../solo5/uhvf
+   make
+   ```
+
+3. Run the unikernel.  
+   ```
+   uhvf ../../mirage-skeleton/console/mir-console.ukvm
+   ```
+
