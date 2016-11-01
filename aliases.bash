@@ -30,6 +30,8 @@ alias solo5-make='docker run --rm -v $PWD:/home/opam/src solo5-make'
 
 alias mirage-make='docker run --rm -v $PWD:/home/opam/src -v $PWD/../../solo5:/home/opam/solo5 mirage-make'
 
+alias mirage-www-make='docker run --rm -v $PWD:/home/opam/src mirage-www-make'
+
 # ukvm [--net] [--disk=foo] UNIKERNEL -- [unikernel args]
 # qemu [--net] [--disk=foo] UNIKERNEL -- [unikernel args]
 # kvm  [--net] [--disk=foo] UNIKERNEL -- [unikernel args]
@@ -39,4 +41,5 @@ alias qemu='docker run --rm --device=/dev/net/tun:/dev/net/tun --cap-add=NET_ADM
 alias kvm='docker run --rm --device=/dev/kvm:/dev/kvm --device=/dev/net/tun:/dev/net/tun --cap-add=NET_ADMIN -v $PWD:/src runner kvm'
 
 
-
+alias gdb-docker='docker run -it --rm -v $PWD:/src gdb'
+alias objdump-docker='docker run -it --rm -v $PWD:/src objdump'

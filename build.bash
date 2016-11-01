@@ -1,10 +1,12 @@
 #!/bin/bash
 
 CONTAINERS="\
+mirage-www-make \
 mirage-make \
 solo5-make \
 objdump \
 netcat \
+gdb \
 "
 # runner  (built differently below)
 
