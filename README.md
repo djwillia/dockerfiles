@@ -59,7 +59,7 @@ netcat
    cd mirage-skeleton/stackv4
    ```
 
-2. Build the unikernel.  Note that the containers but default will
+2. Build the unikernel.  Note that the containers by default will
    expect your Solo5 source directory in a specific place
    (`../../solo5`) and pin it during the Mirage/Solo5 build.  This
    should be fixed so that pinning is optional and the location can be
@@ -95,7 +95,7 @@ date very soon.  See https://github.com/djwillia/solo5/tree/uhvf-ukvm.
    cd mirage-skeleton/console
    ```
 
-2. Build the unikernel.  Note that the containers but default will
+2. Build the unikernel.  Note that the containers by default will
    expect your Solo5 source directory in a specific place
    (`../../solo5`) and pin it during the Mirage/Solo5 build.  This
    should be fixed so that pinning is optional and the location can be
@@ -112,6 +112,6 @@ date very soon.  See https://github.com/djwillia/solo5/tree/uhvf-ukvm.
 
 3. Run the unikernel.  
    ```
-   uhvf ../../mirage-skeleton/console/mir-console.ukvm
+   ./uhvf ../../mirage-skeleton/console/mir-console.ukvm
    ```
 
